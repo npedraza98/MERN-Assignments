@@ -1,12 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
-import ProductForm from './components/ProductForm';
+import {BrowserRouter, Routes, Route} from 'react-router-dom';
+import OneProduct from './components/OneProduct';
+import Main from './views/Main';
 
 function App() {
   return (
-    <div className="App">
-      <ProductForm/>
-    </div>
+    <BrowserRouter>
+      <div className="App">
+        <Routes>
+          <Route path="/" element={<Main/>} />
+          <Route path="/product/:id" element={<OneProduct/>} />
+        </Routes>
+      </div>
+    </BrowserRouter>
   );
 }
 
