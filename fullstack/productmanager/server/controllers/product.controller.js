@@ -29,7 +29,7 @@ module.exports = {
         })
     },
     updateProduct:(req, res) => {
-        Product.updateOne({_id:req.params.id}, req.body)
+        Product.findOneAndUpdate({_id:req.params.id}, req.body, {new:true})
         .then((result)=>{
             res.json(result)
         })
